@@ -1,0 +1,13 @@
+.editorconfig
+.hgignore
+.hgtags
+.jscsrc
+.jshintrc
+.npmignore
+coverage
+test
+*.tgz
+*.log
+*.tmp
+*.orig
+CHANGELOG.md

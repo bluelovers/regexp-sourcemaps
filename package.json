@@ -1,0 +1,48 @@
+{
+  "name": "regexp-sourcemaps2",
+  "version": "1.0.1",
+  "description": "Similar to str.replace(regex, replace) but with sourcemap support",
+  "keywords": [
+    "regexp",
+    "source-maps",
+    "sourcemaps"
+  ],
+  "homepage": "https://bitbucket.org/lsystems/regexp-sourcemaps",
+  "bugs": {
+    "url": "https://bitbucket.org/lsystems/regexp-sourcemaps/issues?status=new&status=open"
+  },
+  "repository": {
+    "type": "hg",
+    "url": "git+https://bitbucket.org/lsystems/regexp-sourcemaps.git"
+  },
+  "license": "MIT",
+  "author": "L.systems SARL",
+  "contributors": [
+    "Quentin Raynaud <quentin.raynaud@lsystems.fr>"
+  ],
+  "main": "lib/regexp-sourcemaps",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "coverage": "npx nyc yarn run test",
+    "lint": "npx eslint **/*.ts",
+    "ncu": "npx yarn-tool ncu -u",
+    "npm:publish": "npm publish",
+    "postpublish_": "git commit -m \"publish new version\" .",
+    "prepublishOnly_": "yarn run ncu && yarn run sort-package-json && yarn run test",
+    "sort-package-json": "npx sort-package-json ./package.json",
+    "test": "node test/test.js",
+    "tsc:default": "tsc -p tsconfig.json",
+    "tsc:esm": "tsc -p tsconfig.esm.json"
+  },
+  "dependencies": {
+    "source-map": "^0.7.3",
+    "symbol.inspect": "^1.0.0"
+  },
+  "devDependencies": {
+    "@bluelovers/tsconfig": "^1.0.13",
+    "lodash": "^4.17.15"
+  }
+}

@@ -1,0 +1,9 @@
+syntax: glob
+
+node_modules/
+tmp/
+*.DS_Store
+*.dump
+*.orig
+*.log
+*.tgz
